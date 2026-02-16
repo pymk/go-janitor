@@ -34,4 +34,8 @@ go-janitor/
 - [X] Plan and design
 - [X] Create directories and files
 - [X] Add boilerplate code
-- [ ] ?
+- [ ] Add cleaning transformation
+- [ ] Add casing transformation
+- [ ] Add formatting transformation
+- [ ] Add CLI logic
+- [ ] Add main logic
