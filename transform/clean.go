@@ -2,12 +2,14 @@ package transform
 
 import (
 	_ "regexp"
-	_ "strings"
+	"strings"
 	_ "unicode"
 )
 
 // Trim removes leading and trailing whitespace
-func Trim(s string) string {}
+func Trim(s string) string {
+	return strings.Trim(s, " ")
+}
 
 // CollapseSpaces replaces multiple consecutive spaces with a single space
 func CollapseSpaces(s string) string {}
