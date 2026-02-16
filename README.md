@@ -9,7 +9,9 @@ How it works: Given a string in stdin, the string pipeline runs in this order:
 3. Remove special characters (only keep alphanumeric)
 4. Normalize to words (if format flag is given)
 5. Apply format
+  - If multiple format flags are set, precedence: pascal -> camel -> kebab -> snake
 6. Apply case
+  - If multiple case flags are set, precedence: upper -> lower
 
 The name is a reference to the [janitor](https://sfirke.github.io/janitor/index.html) package in R.
 
@@ -30,6 +32,6 @@ go-janitor/
 ## TODO
 
 - [X] Plan and design
-- [ ] Create directories and files
-- [ ] Add boilerplate code
+- [X] Create directories and files
+- [X] Add boilerplate code
 - [ ] ?
