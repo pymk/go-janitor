@@ -8,7 +8,7 @@ import (
 
 // Trim removes leading and trailing whitespace
 func Trim(s string) string {
-	return strings.Trim(s, " ")
+	return strings.TrimSpace(s)
 }
 
 // CollapseSpaces replaces multiple consecutive spaces with a single space
