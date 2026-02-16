@@ -19,7 +19,11 @@ func CollapseSpaces(s string) string {
 }
 
 // RemoveSpecialChars removes all characters except alphanumeric and spaces
-func RemoveSpecialChars(s string) string {}
+func RemoveSpecialChars(s string) string {
+	re := regexp.MustCompile(`[^a-zA-Z0-9\s]+`)
+	result := re.ReplaceAll([]byte(s), []byte(""))
+	return string(result)
+}
 
 // SplitIntoWords splits a string into words by detecting multiple boundary types:
 // - Spaces, underscores, hyphens
