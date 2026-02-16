@@ -1,7 +1,7 @@
 package transform
 
 import (
-	_ "regexp"
+	"regexp"
 	"strings"
 	_ "unicode"
 )
@@ -12,7 +12,11 @@ func Trim(s string) string {
 }
 
 // CollapseSpaces replaces multiple consecutive spaces with a single space
-func CollapseSpaces(s string) string {}
+func CollapseSpaces(s string) string {
+	re := regexp.MustCompile(`\s+`)
+	result := re.ReplaceAll([]byte(s), []byte(" "))
+	return string(result)
+}
 
 // RemoveSpecialChars removes all characters except alphanumeric and spaces
 func RemoveSpecialChars(s string) string {}
