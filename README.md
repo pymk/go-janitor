@@ -40,6 +40,23 @@ go run . --help
 #   -S, --collapse-spaces    Collapse multiple spaces into one.
 ```
 
+## Installation
+
+1. Build the binary:
+
+```bash
+# Build the binary
+go build -o janitor
+
+# Move to local bin directory
+mkdir -p ~/.local/bin && mv janitor ~/.local/bin/
+
+# NOTE: Ensure `~/.local/bin` is in your PATH
+
+# Reload shell
+source ~/.zshrc  # or source ~/.bashrc
+```
+
 ## Structure
 
 ```
