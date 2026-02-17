@@ -2,7 +2,9 @@
 
 String clean-up CLI tool.
 
-How it works: Given a string in stdin, the string pipeline runs in this order:
+## How It Works
+
+Given a string in stdin, the string pipeline runs in this order:
 
 1. Trim (leading and trailing whitespaces)
 2. Collapse spaces
@@ -13,7 +15,30 @@ How it works: Given a string in stdin, the string pipeline runs in this order:
 6. Apply case
   - If multiple case flags are set, precedence: upper -> lower
 
-The name is a reference to the [janitor](https://sfirke.github.io/janitor/index.html) package in R.
+## Examples
+
+```bash
+echo "  hello @#$%^&* world " | go run . --snake --upper --remove-special --collapse-spaces
+# HELLO_WORLD
+
+# Combine using short flags
+echo "  hello @#$%^&* world " | go run . -su -CS
+# HELLO_WORLD
+
+go run . --help
+# Usage: janitor [flags]
+# String clean-up CLI tool for transforming stdin.
+# Flags:
+#   -h, --help               Show context-sensitive help.
+#   -l, --lower              Convert to lowercase.
+#   -u, --upper              Convert to UPPERCASE.
+#   -s, --snake              Convert to snake_case.
+#   -k, --kebab              Convert to kebab-case.
+#   -c, --camel              Convert to camelCase.
+#   -p, --pascal             Convert to PascalCase.
+#   -C, --remove-special     Keep only alphanumeric and spaces.
+#   -S, --collapse-spaces    Collapse multiple spaces into one.
+```
 
 ## Structure
 
@@ -23,19 +48,12 @@ go-janitor/
 ├── cli/
 │   └── cli.go          # CLI logic
 ├── transform/
-│   ├── case.go         # Casing (ToLower, ToUpper)
-│   ├── format.go       # Formatting (ToSnake, ToKebab, ToCamel, ToPascal)
-│   └── clean.go        # Cleaning (RemoveSpecial, CollapseSpaces)
+│   ├── case.go         # Casing
+│   ├── format.go       # Formatting
+│   └── clean.go        # Cleaning
 └── go.mod
 ```
 
-## TODO
+## Fun Fact
 
-- [X] Plan and design
-- [X] Create directories and files
-- [X] Add boilerplate code
-- [ ] Add cleaning transformation
-- [ ] Add casing transformation
-- [ ] Add formatting transformation
-- [ ] Add CLI logic
-- [ ] Add main logic
+The name is a nod to the [janitor](https://sfirke.github.io/janitor/index.html) package in R.
