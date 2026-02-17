@@ -55,6 +55,10 @@ mkdir -p ~/.local/bin && mv janitor ~/.local/bin/
 
 # Reload shell
 source ~/.zshrc  # or source ~/.bashrc
+
+# Test
+echo "  hello @#$%^&* world " | janitor -slCS
+# hello_world
 ```
 
 ## Structure
